@@ -1,6 +1,6 @@
 # Mail Dashboard
 
-# Features !
+## Features !
 
   - Email tracking system (Mail Dashboard) provides Outgoing Mails & Incoming mails to a particular Mail Id. Within this, segregation should be made between internal domain and external domain displays on dashboard.
 
@@ -10,7 +10,7 @@
     
  - There are two types of users are available Administrator and Customer. Mail Administrator can help address the issues.
 
-# Before Running Project :
+## Before Running Project :
 
 ### Install following software.
     - Visual Studio 15
