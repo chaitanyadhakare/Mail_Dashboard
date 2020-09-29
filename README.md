@@ -2,11 +2,12 @@
 
 # Features !
 
-  - Our Email tracking system (Mail Dashboard) provides Outgoing Mails & Incoming mails to a particular Mail Id. Within this, segregation should be made between internal domain and external domain displays on dashboard.
+  - Email tracking system (Mail Dashboard) provides Outgoing Mails & Incoming mails to a particular Mail Id. Within this, segregation should be made between internal domain and external domain displays on dashboard.
 
-  - Our system provides the reports by performing email analysis as follows:
+  - This system provides the reports by performing email analysis as follows:
     - Daily, Weekly, Monthly, Yearly emails analysis reports are made available to the user.
     - The reports are given as Top 10 Mail Id’s by No. Of Mail received / sent, Size of mail Boxes, Total size of Attachments sent / received.
+    
  - There are two types of users are available Administrator and Customer. Mail Administrator can help address the issues.
 
 # Before Running Project :
