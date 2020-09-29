@@ -1,0 +1,90 @@
+﻿body{
+    background: url("../images/photo_bg.jpg") no-repeat center center fixed;
+	background-size: cover;
+}
+
+.main-content-section{
+    background-color: white;
+    padding-top: 15px;
+}
+
+.menu-strip{
+    background-color: #665851 !important;
+    color: white !important;
+}
+.navbar-brand{
+    color: white !important;
+}
+.navbar-nav>li>a{
+    color: white !important;
+}
+.dashboard-section{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.dashboard-section-header{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+
+.dashboard-section-item-container{
+    /*border: 1px solid #ccc;*/
+    padding: 5px;
+}
+
+.dashboard-section-item-header{
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.dashboard-section-item-count{
+    color: white;
+    font-weight: 600;
+    font-size: 120px;    
+    text-align: center;
+    border: 1px outset #ccc;    
+    height: 190px;
+    min-width: 220px;
+    padding: 5px;
+}
+
+.daily{
+    background-color: #71338D;
+}
+
+.weekly{
+    background-color: #a8ce4b;
+}
+
+.monthly{
+    background-color: #007acc;
+}
+
+.yearly{
+    background-color: #00643a;
+}
+
+.page-templete-header{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.activelink{
+    background-color: blue;
+    color: white;
+}
+
+.top-10-section{
+    padding: 15px;
+    border: 1px solid #009999;
+    margin-bottom: 20px;
+}
+
+.top-10-section-label{
+    color : darkblue !important;
+    margin-bottom: 10px;
+}

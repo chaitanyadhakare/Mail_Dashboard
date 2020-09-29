@@ -1,0 +1,38 @@
+﻿@using MVCHackathon.Models
+@model MVCHackathon.Models.UserModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+        <title>@ViewBag.Title Mail-Dashboard</title>
+		<div class="login-box animated fadeInUp">
+			<div class="box-header">
+				<h2>Dashboard Login</h2>
+			</div>
+            @if (ViewBag.IsSuccess == true) 
+            {
+                <div class="alert alert-success">
+                    @ViewBag.Message
+                </div>
+            }
+			<label for="username">Username</label>
+			<br/>
+			
+            <input id="login-username" type="text" name="UserName" value="" required>
+			<br/>
+			<label for="password">Password</label>
+			<br/>
+            <input id="login-password" type="password"  name="Password" required >
+			<br/>
+			 <input class="btn btn-primary" type="submit" name="doSignIn" value="Sign In"  >
+		    
+            <a href='@Url.Action("ForgetPassword", "Home")'><p class="small">Forgot your password?</p></a> 
+            
+            <a href='@Url.Action("Register", "Home")'><p class="small">Create Your Account? Register..</p></a>
+		</div>
+	
+}
+
+

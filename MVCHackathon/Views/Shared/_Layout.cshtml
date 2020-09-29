@@ -1,0 +1,127 @@
+﻿@using MVCHackathon.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Content.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/jquery-ui-1.12.1.min.js"></script>
+
+
+    <link href="~/Content/font-awesome.min11.css" rel="stylesheet" />
+    <link href="~/Content/ionicons.min12.css" rel="stylesheet" />
+    <link href="~/Content/ionicons11.css" rel="stylesheet" />
+    <link href="~/Content/style11.css" rel="stylesheet" />
+
+    <script src="~/scripts/bootstrap.min.js"></script>
+    <script src="~/scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/scripts/DataTables/dataTables.bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container body-content main-content-section">
+        <div style="float:right;">
+            Current Date & Time is : @DateTime.Now
+        </div>
+        <div class="clearfix"></div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid menu-strip">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Mail Dashboard</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        @if (ViewBag.UserRoleId == MVCHackathon.Models.Context.ADMIN)
+                        {
+                            <li><a href='@Url.Action("Index", "Dashboard", new { area = "Dashboard"})'>Dashboard</a></li>                            
+                        }
+                        @if (ViewBag.UserRoleId == MVCHackathon.Models.Context.CUSTOMER)
+                        {
+                            <li><a href='@Url.Action("Index", "Customer", new { area = "Customer"})'>My Dashboard</a></li>                            
+                        }
+                        <li><a href='@Url.Action("Index", "Mailbox", new { area = "Mailbox"})'>Mailbox</a></li>
+                        <li><a href='@Url.Action("ComposeMail", "Mailbox", new { area = "Mailbox"})'>Compose Mail</a></li>
+                        <li><a href='@Url.Action("Index", "Chat", new { area = "Chat"})'>Chats</a></li>
+                        <li><a href='@Url.Action("ImportantLinks", "Home", new { area = ""})'>Important Links</a></li>
+                        <li><a href='@Url.Action("Help", "Home", new { area = ""})'>Help</a></li>
+                        <li><a href='@Url.Action("About", "Home", new { area = ""})'>About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="userNamePopoverLink" data-placement='bottom' href="#"><b>Hello @ViewBag.UserRealName</b></a></li>
+                        <li></li>
+                    </ul>
+                    <div id="popover_content_wrapper" style="display: none">
+                        <div style="padding-bottom:5px;">
+                            <a href='@Url.Action("ChangePassword", "Home", new { area = ""})'><span class="glyphicon glyphicon-wrench"></span> Change Password</a>
+                        </div>
+                        <div style="padding-bottom:5px;">
+                            <a href='@Url.Action("EditProfile", "Home", new { area = ""})'><span class="glyphicon glyphicon-wrench"></span> Edit Profile</a>
+                        </div>
+                        <div style="padding-bottom:5px;">
+                            <a href='@Url.Action("Logout", "Home", new { area = ""})'><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </nav>
+        
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Mail Dashboard </p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#userNamePopoverLink').popover({
+                html: true,
+                content: function () {
+                    return $('#popover_content_wrapper').html();
+                }
+            });
+
+            $('#table-data-collection').DataTable();
+
+            //$('#table-data-collection-report1').DataTable();
+            //$('#table-data-collection-report2').DataTable();
+            //$('#table-data-collection-report3').DataTable();
+            //$('#table-data-collection-report4').DataTable();
+            //$('#table-data-collection-report5').DataTable();
+            //$('#table-data-collection-report6').DataTable();
+            //$('#table-data-collection-report7').DataTable();
+            //$('#table-data-collection-report8').DataTable();
+
+            $('#table-data-collection-pagination').DataTable({
+                "pagingType": "full_numbers"
+            });
+            $('#table-data-collection-pagination1').DataTable({
+                "pagingType": "full_numbers"
+            });
+            $('#table-data-collection-pagination2').DataTable({
+                "pagingType": "full_numbers"
+            });
+            $('#table-data-collection-pagination3').DataTable({
+                "pagingType": "full_numbers"
+            });
+            $('#table-data-collection-pagination4').DataTable({
+                "pagingType": "full_numbers"
+            });
+        });
+    </script>
+
+
+</body>
+</html>
